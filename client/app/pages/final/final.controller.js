@@ -1,8 +1,7 @@
 (function () {
 	angular.module('base')
-		.controller('CredsCtrl', [function (title) {
+		.controller('FinalCtrl', [function () {
 			var vm = this;
-			vm.title = title;
 		}]);
 
 })();

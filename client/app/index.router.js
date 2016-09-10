@@ -13,7 +13,8 @@ function routerConfig ($stateProvider, $urlRouterProvider, pages) {
       $stateProvider.state(dataKey, {
         url: '/' + dataKey,
         templateUrl: dataKey + '.html',
-        controller: page.controller
+        controller: page.controller,
+        resolve: page.resolve
       });
     })(page);
   });
