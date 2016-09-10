@@ -1,0 +1,18 @@
+{
+  "name": "LUN-test",
+  "authors": [
+    "ilukianov <ilukianov@cogniance.com>"
+  ],
+  "description": "Test for LUN.ua",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "~1.5.7",
+    "angular-bootstrap": "~1.3.3",
+    "angular-ui-router": "~0.3.1",
+    "bootstrap": "~3.3.6",
+    "lodash": "^4.14.1"
+  },
+  "private": true
+}

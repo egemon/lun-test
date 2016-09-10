@@ -1,0 +1,5 @@
+node_modules
+client/lib
+client/app/templates.js
+client/dev.html
+.idea/
