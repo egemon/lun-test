@@ -5,7 +5,6 @@
 
 function routerConfig ($stateProvider, $urlRouterProvider, pages) {
 
-  $urlRouterProvider.otherwise('/' + pages[0].url);
 
   _.each(pages, function (page) {
     (function (page) {
@@ -13,11 +12,13 @@ function routerConfig ($stateProvider, $urlRouterProvider, pages) {
       $stateProvider.state(dataKey, {
         url: '/' + dataKey,
         templateUrl: dataKey + '.html',
-        controller: page.controller,
-        resolve: page.resolve
+        controller: page.controller
       });
     })(page);
   });
+
+  $urlRouterProvider.otherwise('/' + pages[0].url);
+
 }
 
 })();

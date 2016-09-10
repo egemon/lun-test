@@ -1,14 +1,15 @@
 <div ng-controller="BaseCtrl">
-    <uib-tabset active="active" justified="true">
+    <uib-tabset active="BaseCtrl.active" justified="true">
         <uib-tab
                 ng-repeat="page in BaseCtrl.pages"
-                ui-sref="{{ :: page.url }}"
-                index="$index + 1"
-                heading="{{:: page.name }}">
+                ui-sref="{{page.url }}"
+                index="$index"
+                heading="{{ page.name }}">
         </uib-tab>
     </uib-tabset>
-    <main-container>
+    <div class="">
+        <title class="base__page-title">{{(active + 1) + '. ' + BaseCtrl.pages[BaseCtrl.active].data.title }}</title>
         <main ui-view></main>
-    </main-container>
-
+        <controls></controls>
+    </div>
 </div>

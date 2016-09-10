@@ -29,7 +29,9 @@ gulp.task('watch', function() {
   gulp.watch('./'+config.paths.src.js, injectChanges);
 
   // Watch tmpls html files
-  gulp.watch('./'+config.paths.src.tmpls, ['tmpls']);
+  gulp.watch('./'+config.paths.src.tmpls, function () {
+    return gulp.run('tmpls');
+  });
 
   // Watch tmpls html files
   gulp.watch('./conf.js', ['default']);

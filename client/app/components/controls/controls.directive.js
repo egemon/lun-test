@@ -4,6 +4,9 @@
 			return {
 				controller: 'ControlsCtrl as ControlsCtrl',
 				transclude: true,
+				bindToController: {
+					active: "<"
+				},
 				templateUrl: 'controls.html'
 			};
 		});

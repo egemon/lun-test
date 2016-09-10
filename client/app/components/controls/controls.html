@@ -1,2 +1,6 @@
-<button ui-sref="{{ ControlsCtrl.prevPage }}">Предыдущий</button>
-<button ui-sref="{{ ControlsCtrl.nextPage }}">Следующий</button>
+<button
+    ng-disabled="!ControlsCtrl.prevPage"
+    ui-sref="{{ ControlsCtrl.prevPage.url || '/' }}">Предыдущий</button>
+<button
+    ng-disabled="!ControlsCtrl.nextPage"
+    ui-sref="{{ ControlsCtrl.nextPage.url || '/' }}">Следующий</button>

@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     jshint = require('gulp-jshint'),
     angularFilesort = require('gulp-angular-filesort'),
+    ngAnnotate = require('gulp-ng-annotate'),
     templateCache = require('gulp-angular-templatecache');
 
     // ========== JS TASKS =============
@@ -43,6 +44,7 @@ gulp.task('tmpls', function () {
 gulp.task('js-ng-app', ['tmpls'], function () {
     return gulp.src(config.paths.src.js)
     .pipe(angularFilesort())
+    .pipe(ngAnnotate())
     .pipe(concat('custom.js'))
     .pipe(_if(isProd, uglify(), beautify()))
     .pipe(rename({suffix: '.min'}))

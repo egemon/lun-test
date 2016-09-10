@@ -6,7 +6,7 @@
             url: 'credentials',
             name: '1',
             step: 1,
-            resolve: {
+            data: {
                 title: 'Введите имя и e-mail'
             },
             controller: 'CredsCtrl as CredsCtrl'
@@ -14,7 +14,7 @@
             url: 'location',
             name: '2',
             step: 2,
-            resolve: {
+            data: {
                 title: 'Выберите страну и город'
             },
             controller: 'LocationCtrl as LocationCtrl'
@@ -22,7 +22,7 @@
             url: 'socials',
             name: '3',
             step: 3,
-            resolve: {
+            data: {
                 title: 'Отметьте социальные сети'
             },
             controller: 'SocialCtrl as SocialCtrl'
@@ -30,7 +30,7 @@
             url: 'captcha',
             name: '4',
             step: 4,
-            resolve: {
+            data: {
                 title: 'Выберте любимого котика'
             },
             controller: 'CaptchaCtrl as CaptchaCtrl'
@@ -38,7 +38,7 @@
             url: 'final',
             name: '5',
             step: 5,
-            resolve: {
+            data: {
             },
             controller: 'FinalCtrl as FinalCtrl'
         }
