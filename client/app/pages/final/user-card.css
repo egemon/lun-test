@@ -1,7 +1,22 @@
 .user-card {
     display: flex;
+    background-color: #fff;
 }
+.user-card__data-container {
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #666;
+}
+.user-card__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
 .user-card__img {
-    height: 100px;
-    width: 100px;
+    height: 195px;
+    width: 200px;
+    margin: 24px;
 }

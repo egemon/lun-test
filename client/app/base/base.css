@@ -1,3 +1,65 @@
+html {
+    height: 100%;
+}
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font: 15px "Open Sans", sans-serif;
+}
+.base-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .base__page-title {
     display: block;
+}
+
+.nav-pills {
+    margin-bottom: 16px;
+}
+
+.base__page-title {
+    margin-bottom: 40px;
+}
+
+main {
+    margin-bottom: 150px;
+}
+main.last-page {
+    margin-bottom: 20px;
+}
+
+
+.nav-pills>li+li {
+    margin-left: 10px;
+}
+
+.nav-pills>li>a:focus,
+.nav-pills>li>a:hover {
+    background-color: #444;
+    color: #f00;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    background-color: #fff;
+    color: #00f;
+}
+
+.nav-pills>li>a,
+.nav-pills>li.disabled>a,
+.nav-pills>li.disabled>a:focus,
+.nav-pills>li.disabled>a:hover{
+    background-color: #ccc;
+    color: #f00;
+}
+.nav-pills>li.disabled>a,
+.nav-pills>li.disabled>a:focus,
+.nav-pills>li.disabled>a:hover {
+    opacity: 0.5;
 }

@@ -2,9 +2,14 @@
     display: flex;
 }
 .captcha__image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    margin: 0 8px 16px 0;
+    border-radius: 5px;
 }
 .captcha__image.selected {
-    border:10px solid black;
+    border:5px solid #ffa500;
+}
+.ng-touched.ng-invalid~.input__error-hint.captcha__error-hint {
+    position: inherit;
 }

@@ -1,13 +1,18 @@
 <div class="user-card">
     <div class="user-card__data-container">
-        <div class="user-card__title">{{FinalCtrl.user.name}}</div>
-        <div class="user-card__email">{{FinalCtrl.user.email}}</div>
+        <div>
+            <div class="user-card__title">{{FinalCtrl.user.name}}</div>
+            <div class="user-card__email">{{FinalCtrl.user.email}}</div>
+        </div>
         <div class="user-card__location"
          ng-if="FinalCtrl.user.country">{{FinalCtrl.user.country.name + ', ' + FinalCtrl.user.city}}</div>
-        <div class="user-card__networks"
-        ng-repeat="(network, link) in FinalCtrl.user.networks">
-            <span class="user-card__network-name">{{network}}</span>
-            <span class="user-card__network-link">{{link}}</span>
+        <div class="user-card__networks">
+            <div class="user-card__network"
+            ng-repeat="(network, link) in FinalCtrl.user.networks"
+            ng-if="link">
+                <span class="user-card__network-name">{{network | translate}}:</span>
+                <span class="user-card__network-link">{{link}}</span>
+            </div>
         </div>
     </div>
     <img class="user-card__img"

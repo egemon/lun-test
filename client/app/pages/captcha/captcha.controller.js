@@ -1,6 +1,6 @@
 (function () {
 	angular.module('base')
-		.controller('CaptchaCtrl', function (serverSrv, user, $scope) {
+		.controller('CaptchaCtrl', function (serverSrv, user) {
 			var vm = this;
 			vm.isCorrect = false;
 			vm.isSelected = false;

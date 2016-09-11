@@ -1,20 +1,29 @@
-<form name="BaseCtrl.form">
-    <uib-tabset active="BaseCtrl.active" justified="true">
-        <uib-tab
-                ng-repeat="page in BaseCtrl.pages"
-                disable="(BaseCtrl.form.$invalid && $index === BaseCtrl.active + 1) || $index > BaseCtrl.active + 1"
-                index="$index"
-                ng-click="!((BaseCtrl.form.$invalid && $index === BaseCtrl.active + 1) || $index > BaseCtrl.active + 1) && BaseCtrl.goToPage(page)"
-                heading="{{ page.name }}">
-        </uib-tab>
-    </uib-tabset>
-    <div class="">
+<form class="base-container"
+        name="BaseCtrl.form">
+    <div>
+        <uib-tabset
+                ng-show="(BaseCtrl.pages.length - 1) !== BaseCtrl.active"
+                type="pills"
+                active="BaseCtrl.active">
+            <uib-tab
+                    ng-repeat="page in BaseCtrl.pages"
+                    ng-show="!$last"
+                    disable="(BaseCtrl.form.$invalid && $index === BaseCtrl.active + 1) || $index > BaseCtrl.active + 1"
+                    index="$index"
+                    ng-click="!((BaseCtrl.form.$invalid && $index === BaseCtrl.active + 1) || $index > BaseCtrl.active + 1) && BaseCtrl.goToPage(page)"
+                    heading="{{ page.name }}">
+            </uib-tab>
+        </uib-tabset>
         <title class="base__page-title"
-           ng-if="BaseCtrl.pages[BaseCtrl.active].data.title"
-        >{{(BaseCtrl.active + 1) + '. ' + BaseCtrl.pages[BaseCtrl.active].data.title }}</title>
-        <main ui-view></main>
+           ng-if="BaseCtrl.pages[BaseCtrl.active].data.title">
+            {{(BaseCtrl.active + 1) + '. ' + BaseCtrl.pages[BaseCtrl.active].data.title }}
+        </title>
+    </div>
+        <main ng-class="{
+           'last-page': BaseCtrl.pages.length - 1 === BaseCtrl.active
+           }"
+                ui-view></main>
         <controls active="BaseCtrl.active"
         next-availiable="BaseCtrl.form.$valid">
         </controls>
-    </div>
 </form>

@@ -4,11 +4,11 @@
            typeahead-editable="false"
            typeahead-min-length="0"
            placeholder="Страна"
-           ng-change="LocationCtrl.updateCities(LocationCtrl.user.country)"
+           typeahead-on-select="LocationCtrl.updateCities(LocationCtrl.user.country)"
            ng-model="LocationCtrl.user.country"
            uib-typeahead="country as country.name for country in LocationCtrl.countries | filter:{name: $viewValue}">
 
-    <span class="input__error-hint">Выберите со списка</span>
+    <span class="input__error-hint">Выберите из списка</span>
 </label>
 <label class="input__label">
     <input type="text"
@@ -18,5 +18,5 @@
            placeholder="Город"
            ng-model="LocationCtrl.user.city"
            uib-typeahead="city for city in LocationCtrl.cities  | filter:$viewValue">
-    <span class="input__error-hint">Выберите со списка</span>
+    <span class="input__error-hint">Выберите из списка</span>
 </label>

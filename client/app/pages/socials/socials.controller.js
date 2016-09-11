@@ -4,12 +4,12 @@
 			var vm = this;
 			vm.user = user;
 			vm.networks = [];
-			vm.selectedNetworks = _.mapValues(user.networks, function () {
-				return true;
+			vm.selectedNetworks = _.mapValues(user.networks, function (value) {
+				return !!value;
 			});
 			serverSrv.getNetworks().then(function (networks) {
 				vm.networks = networks;
-			})
+			});
 		});
 
 })();

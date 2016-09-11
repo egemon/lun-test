@@ -8,22 +8,22 @@ angular.module('base')
 
 		return {
 			'request': function(config) {
-				console.log('request()', arguments);
+				// console.log('request()', arguments);
 				return config;
 			},
 			'requestError': function(rejection) {
-				console.log('requestError()', arguments);
+				// console.log('requestError()', arguments);
 				// alert('Error' + rejection);
 				return $q.reject(rejection);
 			},
 
 
 			'response': function(response) {
-				console.log('response()', arguments);
+				// console.log('response()', arguments);
 				return response;
 			},
 			'responseError': function(rejection) {
-				console.log('responseError()', arguments);
+				// console.log('responseError()', arguments);
 				// alert('Error' + rejection);
 				return $q.reject(rejection);
 			}

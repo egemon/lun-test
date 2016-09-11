@@ -4,7 +4,7 @@
 	}
 
 	angular.module('base')
-		.controller('BaseCtrl', function (pages, user, $state, $scope) {
+		.controller('BaseCtrl', function (pages, user, $state) {
 			var vm = this;
 			vm.pages = pages;
 			vm.active = getActiveTab(vm.pages) || 0;

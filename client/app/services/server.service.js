@@ -27,7 +27,7 @@
 							return {
 								code: key,
 								name: value
-							}
+							};
 						})
 						.toArray()
 						.value();
@@ -37,24 +37,26 @@
 
 			function getCities (country) {
 				return $q.when({
-					"2": {"country": 3, "name": "Paris"},
-					"3": {"country": 4, "name": "Madrid"},
-					"4": {"country": 6, "name": "Houston"},
-					"5": {"country": 7, "name": "Montreal"},
-					"6": {"country": 8, "name": "Кишинев"},
-					"7": {"country": 9, "name": "Minsk"},
-					"8": {"country": 10, "name": "Warsaw"},
-					"100": {"country": 1, "name": "Львов"},
-					"101": {"country": 1, "name": "Николаев"},
-					"103": {"country": 1, "name": "Переяслав-Хмельницкий"},
-					"104": {"country": 1, "name": "Каменец-Подольский"},
-					"105": {"country": 1, "name": "Donetsk"},
-					"106": {"country": 1, "name": "Kharkov"},
-					"107": {"country": 1, "name": "Луцк"},
-					"108": {"country": 1, "name": "Poltava"},
-					"109": {"country": 1, "name": "Черновцы"},
-					"299": {"country": 1, "name": "Чернигов"},
-					"333": {"country": 1, "name": "Чернигов"}
+					"1": {"country": "2", "name": "Hamburg"},
+					"2": {"country": "3", "name": "Paris"},
+					"3": {"country": "4", "name": "Madrid"},
+					"4": {"country": "6", "name": "Houston"},
+					"5": {"country": "7", "name": "Montreal"},
+					"6": {"country": "8", "name": "Кишинев"},
+					"7": {"country": "9", "name": "Minsk"},
+					"8": {"country": "10", "name": "Warsaw"},
+					"9": {"country": "5", "name": "Stockholm"},
+					"100": {"country": "1", "name": "Львов"},
+					"101": {"country": "1", "name": "Николаев"},
+					"103": {"country": "1", "name": "Переяслав-Хмельницкий"},
+					"104": {"country": "1", "name": "Каменец-Подольский"},
+					"105": {"country": "1", "name": "Donetsk"},
+					"106": {"country": "1", "name": "Kharkov"},
+					"107": {"country": "1", "name": "Луцк"},
+					"108": {"country": "1", "name": "Poltava"},
+					"109": {"country": "1", "name": "Черновцы"},
+					"299": {"country": "1", "name": "Чернигов"},
+					"333": {"country": "1", "name": "Чернигов"}
 				}).then(function (cities) {
 					return _.chain(cities)
 						.groupBy('country')
@@ -65,7 +67,9 @@
 							};
 						})
 						.toArray()
-						.filter({countryCode: country.code})
+						.filter({
+							countryCode: country.code
+						})
 						.map('cities')
 						.flatten()
 						.value();
