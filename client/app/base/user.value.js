@@ -1,14 +1,20 @@
 (function () {
 	angular.module('base')
 		.value('user', {
-			name: '',
-			email: '',
+			name: 'Illia',
+			email: 'illia@example.com',
 			country: '',
-			city: '',
+			city: 'Donetsk',
 			networks: {
-				FB:'http://a'
+				FB:'http://a',
+				VK:'http://a',
+				OD:'http://a',
+				TW:'http://a'
 			},
-			picture: ''
+			// picture: {
+			// 	src: 'assets/cat1.jpg',
+			// 	id: 1
+			// }
 		});
 
 })();

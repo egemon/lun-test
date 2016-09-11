@@ -5,7 +5,8 @@
 				controller: 'ControlsCtrl as ControlsCtrl',
 				transclude: true,
 				bindToController: {
-					active: "="
+					active: "=",
+					nextAvailiable: "<"
 				},
 				templateUrl: 'controls.html'
 			};

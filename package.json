@@ -5,7 +5,8 @@
   "main": "index.js",
   "keywords": [],
   "scripts": {
-    "postinstall": "bower install && gulp build"
+    "postinstall": "bower install && gulp build",
+    "run": "gulp"
   },
   "author": {
     "name": "ilukianov",

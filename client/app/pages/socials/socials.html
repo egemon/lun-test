@@ -1,12 +1,14 @@
-<label class="input__label"
-ng-repeat="network in SocialCtrl.networks">
-    <input type="checkbox"
-        ng-model="SocialCtrl.selectedNetworks[network]">
-    {{::network}}
-    <input type="url"
-        ng-if="SocialCtrl.selectedNetworks[network]"
-        placeholder="Ваша страница в {{::network}}"
-        required
-        ng-model="SocialCtrl.user.networks[network]">
-    <span class="input__error-hint">Нужно ввести ссылку</span>
-</label>
+<div class="networks">
+    <label class="input__label"
+    ng-repeat="network in SocialCtrl.networks">
+        <input type="checkbox"
+            ng-model="SocialCtrl.selectedNetworks[network]">
+        {{::network}}
+        <input type="url"
+            ng-if="SocialCtrl.selectedNetworks[network]"
+            placeholder="Ваша страница в {{::network}}"
+            required
+            ng-model="SocialCtrl.user.networks[network]">
+        <span class="input__error-hint">Нужно ввести ссылку</span>
+    </label>
+</div>

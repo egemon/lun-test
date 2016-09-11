@@ -1,16 +1,17 @@
 <div class="captcha__image-container"
     ng-class="{
-        'ng-invalid': CaptchaCtrl.isCorrect,
+        'ng-invalid': !CaptchaCtrl.isCorrect,
         'ng-touched': CaptchaCtrl.isSelected,
     }">
     <img
         class="captcha__image"
         ng-repeat="captcha in CaptchaCtrl.captchas"
         ng-class="{
-            'selected': CaptchaCtrl.selectedCaptcha === captcha
+            'selected': CaptchaCtrl.user.picture === captcha
         }"
         ng-src="{{captcha.src}}"
-        ng-click="CaptchaCtrl.checkCaptcha(captcha)"
+        ng-click="CaptchaCtrl.validateCaptcha(captcha)"
     >
 </div>
+<input type="checkbox" ng-model="CaptchaCtrl.isCorrect"  required disabled>
 <span class="input__error-hint">Выберите со списка</span>

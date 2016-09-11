@@ -1,15 +1,20 @@
-<form name="BaseCtrl.form" ng-controller="BaseCtrl">
+<form name="BaseCtrl.form">
     <uib-tabset active="BaseCtrl.active" justified="true">
         <uib-tab
                 ng-repeat="page in BaseCtrl.pages"
-                ui-sref="{{page.url }}"
+                disable="(BaseCtrl.form.$invalid && $index === BaseCtrl.active + 1) || $index > BaseCtrl.active + 1"
                 index="$index"
+                ng-click="!((BaseCtrl.form.$invalid && $index === BaseCtrl.active + 1) || $index > BaseCtrl.active + 1) && BaseCtrl.goToPage(page)"
                 heading="{{ page.name }}">
         </uib-tab>
     </uib-tabset>
     <div class="">
-        <title class="base__page-title">{{(BaseCtrl.active + 1) + '. ' + BaseCtrl.pages[BaseCtrl.active].data.title }}</title>
+        <title class="base__page-title"
+           ng-if="BaseCtrl.pages[BaseCtrl.active].data.title"
+        >{{(BaseCtrl.active + 1) + '. ' + BaseCtrl.pages[BaseCtrl.active].data.title }}</title>
         <main ui-view></main>
-        <controls active="BaseCtrl.active"></controls>
+        <controls active="BaseCtrl.active"
+        next-availiable="BaseCtrl.form.$valid">
+        </controls>
     </div>
 </form>

@@ -1,8 +1,14 @@
+<div class="" ng-if="ControlsCtrl.pages[ControlsCtrl.active + 1]">
+    <button
+        ng-disabled="!ControlsCtrl.pages[ControlsCtrl.active - 1]"
+        ng-click="ControlsCtrl.goPrevPage()"
+        >Предыдущий</button>
+    <button
+        ng-disabled="!ControlsCtrl.pages[ControlsCtrl.active + 1] || !ControlsCtrl.nextAvailiable"
+        ng-click="ControlsCtrl.goNextPage()"
+        >Следующий</button>
+</div>
 <button
-    ng-disabled="!ControlsCtrl.pages[ControlsCtrl.active - 1]"
-    ng-click="ControlsCtrl.goPrevPage()"
-    >Предыдущий</button>
-<button
-    ng-disabled="!ControlsCtrl.pages[ControlsCtrl.active + 1]"
-    ng-click="ControlsCtrl.goNextPage()"
-    >Следующий</button>
+        ng-if="!ControlsCtrl.pages[ControlsCtrl.active + 1]"
+        ng-click="ControlsCtrl.goStart()"
+>Начать сначала</button>

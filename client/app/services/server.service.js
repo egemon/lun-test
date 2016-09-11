@@ -69,7 +69,7 @@
 						.map('cities')
 						.flatten()
 						.value();
-				})
+				});
 			}
 
 			function getNetworks () {
@@ -95,5 +95,5 @@
 			function checkCaptcha (captcha) {
 				return captcha.id === 4 ? $q.reject() : $q.resolve();
 			}
-		})
+		});
 })();
