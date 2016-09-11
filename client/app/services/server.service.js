@@ -10,7 +10,7 @@
 			};
 
 			function getCountries () {
-				return _.chain({
+				return $q.when({
 					"1": "Ukraine",
 					"2": "Germany",
 					"3": "France",
@@ -21,15 +21,18 @@
 					"8": "Moldova",
 					"9": "Belarus",
 					"10": "Poland"
+				}).then(function (countries) {
+					return _.chain(countries)
+						.mapValues(function (value, key) {
+							return {
+								code: key,
+								name: value
+							}
+						})
+						.toArray()
+						.value();
 				})
-					.mapValues(function (value, key) {
-						return {
-							code: key,
-							name: value
-						}
-					})
-					.toArray()
-					.value();
+
 			}
 
 			function getCities (country) {
@@ -53,7 +56,7 @@
 					"299": {"country": 1, "name": "Чернигов"},
 					"333": {"country": 1, "name": "Чернигов"}
 				}).then(function (cities) {
-					_.chain(cities)
+					return _.chain(cities)
 						.groupBy('country')
 						.mapValues(function (value, key) {
 							return {
