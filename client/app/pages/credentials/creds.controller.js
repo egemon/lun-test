@@ -1,8 +1,8 @@
 (function () {
 	angular.module('base')
-		.controller('CredsCtrl', [function (title) {
+		.controller('CredsCtrl', function (user) {
 			var vm = this;
-			vm.title = title;
-		}]);
+			vm.user = user;
+		});
 
 })();

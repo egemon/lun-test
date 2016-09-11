@@ -1,1 +1,21 @@
-Credentials
+<label class="input__label">
+    <input type="text"
+           required
+           typeahead-editable="false"
+           typeahead-min-length="0"
+           placeholder="Страна"
+           ng-model="LocationCtrl.user.country"
+           uib-typeahead="country as country.name for country in LocationCtrl.countries | filter:{name: $viewValue}">
+
+    <span class="input__error-hint">Выберите со списка</span>
+</label>
+<label class="input__label">
+    <input type="text"
+           required
+           typeahead-editable="false"
+           typeahead-min-length="0"
+           placeholder="Город"
+           ng-model="LocationCtrl.user.city"
+           uib-typeahead="city for city in LocationCtrl.getCities(LocationCtrl.user.country)  | filter:$viewValue">
+    <span class="input__error-hint">Выберите со списка</span>
+</label>

@@ -1,6 +1,8 @@
 <button
-    ng-disabled="!ControlsCtrl.prevPage"
-    ui-sref="{{ ControlsCtrl.prevPage.url || '/' }}">Предыдущий</button>
+    ng-disabled="!ControlsCtrl.pages[ControlsCtrl.active - 1]"
+    ng-click="ControlsCtrl.goPrevPage()"
+    >Предыдущий</button>
 <button
-    ng-disabled="!ControlsCtrl.nextPage"
-    ui-sref="{{ ControlsCtrl.nextPage.url || '/' }}">Следующий</button>
+    ng-disabled="!ControlsCtrl.pages[ControlsCtrl.active + 1]"
+    ng-click="ControlsCtrl.goNextPage()"
+    >Следующий</button>

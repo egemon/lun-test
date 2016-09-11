@@ -1,1 +1,16 @@
-Credentials
+<div class="captcha__image-container"
+    ng-class="{
+        'ng-invalid': CaptchaCtrl.isCorrect,
+        'ng-touched': CaptchaCtrl.isSelected,
+    }">
+    <img
+        class="captcha__image"
+        ng-repeat="captcha in CaptchaCtrl.captchas"
+        ng-class="{
+            'selected': CaptchaCtrl.selectedCaptcha === captcha
+        }"
+        ng-src="{{captcha.src}}"
+        ng-click="CaptchaCtrl.checkCaptcha(captcha)"
+    >
+</div>
+<span class="input__error-hint">Выберите со списка</span>

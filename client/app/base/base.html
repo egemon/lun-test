@@ -1,4 +1,4 @@
-<div ng-controller="BaseCtrl">
+<form name="BaseCtrl.form" ng-controller="BaseCtrl">
     <uib-tabset active="BaseCtrl.active" justified="true">
         <uib-tab
                 ng-repeat="page in BaseCtrl.pages"
@@ -8,8 +8,8 @@
         </uib-tab>
     </uib-tabset>
     <div class="">
-        <title class="base__page-title">{{(active + 1) + '. ' + BaseCtrl.pages[BaseCtrl.active].data.title }}</title>
+        <title class="base__page-title">{{(BaseCtrl.active + 1) + '. ' + BaseCtrl.pages[BaseCtrl.active].data.title }}</title>
         <main ui-view></main>
-        <controls></controls>
+        <controls active="BaseCtrl.active"></controls>
     </div>
-</div>
+</form>
