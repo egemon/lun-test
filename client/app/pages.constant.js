@@ -38,8 +38,6 @@
             url: 'final',
             name: '5',
             step: 5,
-            data: {
-            },
             controller: 'FinalCtrl as FinalCtrl'
         }
     ]);
